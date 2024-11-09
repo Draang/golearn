@@ -7,7 +7,9 @@ func Sum(nums []int) int {
 	}
 	return sum
 }
-func SumAll(listNums [][]int) []int {
+
+// Veradic function
+func SumAll(listNums ...[]int) []int {
 	listSum := []int{}
 	for _, nums := range listNums {
 		sum := Sum(nums)
