@@ -29,3 +29,15 @@ func (c Circle) Perimeter() float64 {
 func (c Circle) Area() float64 {
 	return math.Pi * c.Radio * c.Radio
 }
+
+type Tiangle struct {
+	Base   float64
+	Height float64
+}
+
+func (t Tiangle) Area() float64 {
+	return (t.Base * t.Height) / 2
+}
+func (t Tiangle) Perimeter() float64 {
+	return 0.0
+}
