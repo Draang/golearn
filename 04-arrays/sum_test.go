@@ -22,7 +22,6 @@ func TestSum(t *testing.T) {
 			t.Errorf("got %d want %d given, %v", got, want, nums)
 		}
 	})
-
 }
 func TestSumAll(t *testing.T) {
 	got := SumAll([]int{1, 2, 3}, []int{1, 2, 3}, []int{1, 2, 3})
