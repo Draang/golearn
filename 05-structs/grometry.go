@@ -2,6 +2,11 @@ package structs
 
 import "math"
 
+//Uso de interfaces es implicito por ejemplo Rectangle tiene area que regresa un float64 ya con eso implica que puede entrar dentro de la interface de shape
+type Shape interface {
+	Area() float64
+	Perimeter() float64
+}
 type Rectangle struct {
 	Width  float64
 	Height float64
