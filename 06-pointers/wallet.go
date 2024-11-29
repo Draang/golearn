@@ -12,7 +12,7 @@ type Stringer interface {
 type Wallet struct {
 	balance Bitcoin
 }
-
+var ErrInsufficentFunds=errors.New("no puedes retirar mas de tu balance")
 // El Asterisco representa que estas mandando la direccion de memoria un puntero de esa manera se cambia el mismo objeto
 func (w *Wallet) Deposit(amount Bitcoin) {
 	//w.balance+=amount <== metodo no efectivo por que la w es una copia de la wallet no modificamos la misma direccion de memoria
@@ -29,7 +29,7 @@ func (w *Wallet) Balance() Bitcoin {
 }
 func (w *Wallet) Withdraw(amount Bitcoin) error {
 	if amount > w.balance {
-		return errors.New("no puedes retirar mas de tu balance")
+		return ErrInsufficentFunds
 	}
 	w.balance -= amount
 	return nil
